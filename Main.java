@@ -20,7 +20,7 @@ public class Main implements ActionListener
     {
         // initialise instance variables
         buatFrame();
-        frame.setVisible(true);
+        setVisible(true);
     }
 
     //menampilkan dan menutup frame
@@ -87,6 +87,6 @@ public class Main implements ActionListener
         }
         else if(command.equals("PRISMA")){
             //cipta objek class prisma
-        }
+        }      
     }
 }

@@ -12,7 +12,7 @@ public class Kubus extends BangunRuang
     //private int volume;
     //private int luasPermukaan;
     
-    public void Kubus(int sisi)
+    public Kubus(int sisi)
     {
         this.sisi = sisi;
     }
