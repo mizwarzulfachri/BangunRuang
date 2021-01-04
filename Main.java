@@ -13,6 +13,9 @@ public class Main implements ActionListener
     // instance variables - replace the example below with your own
     private JFrame frame;
     private JButton bolaButton, kubusButton, balokButton, limasButton, prismaButton;
+    private JLabel label;
+    private JPanel panel;
+    private JTextField textUser;
     /**
      * Constructor for objects of class Main
      */
@@ -83,10 +86,28 @@ public class Main implements ActionListener
             //cipta objek class balok
         }
         else if(command.equals("LIMAS")){
-            //cipta objek class limas
+            frameLimas();
         }
         else if(command.equals("PRISMA")){
             //cipta objek class prisma
         }      
+    }
+    
+    public void frameLimas() {
+        frame = new JFrame("BANGUN RUANG");
+        frame.setSize(500, 500);
+        
+        JPanel panel = (JPanel)frame.getContentPane();
+        panel.setLayout(new BorderLayout());
+        
+        //Label untuk Panjang
+        JLabel label = new JLabel("Panjang");
+        label.setBounds(10, 20, 80, 25);
+        panel.add(textUser);
+            
+        //Input dari user
+        textUser = new JTextField(20);
+        textUser.setBounds(100, 20, 165, 25);
+        panel.add(textUser);    
     }
 }
