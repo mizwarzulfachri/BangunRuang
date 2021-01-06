@@ -6,32 +6,18 @@
  */
 public abstract class BangunRuang
 {
-    // instance variables - replace the example below with your own 
-    public double luasPermukaan;
-    public double volume;
+    private double luasPermukaan, volume;
     
     /**
      * method constructor 
-     */    
-    public double getLuasPermukaan()
+     */  
+    public BangunRuang()
     {
-        luasPermukaan();
-        return luasPermukaan;
+        luasPermukaan = luasPermukaan;
+        volume = volume;
     }
     
-    public double getVolume()
-    {
-        volume();
-        return volume;
-    }
+    abstract public double getLuasPermukaan();
     
-    /**
-     * method abstract yang harus di override oleh subclass
-     */
-    public abstract void luasPermukaan();
-     
-    /**
-     * method abstract yang harus di override oleh subclass
-     */
-    public abstract void volume();
+    abstract public double getVolume();
 }
