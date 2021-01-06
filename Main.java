@@ -86,7 +86,7 @@ public class Main implements ActionListener
             //cipta objek class limas
         }
         else if(command.equals("PRISMA")){
-            //cipta objek class prisma
+            Prisma pr = new Prisma();
         }
     }
 }
