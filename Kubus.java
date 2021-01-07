@@ -8,24 +8,32 @@
 public class Kubus extends BangunRuang
 {
     // instance variables - replace the example below with your own
-    private int sisi;
-    //private int volume;
-    //private int luasPermukaan;
+    private double sisi, volume, luasPermukaan;
     
-    public Kubus(int sisi)
+    public Kubus()
     {
-        this.sisi = sisi;
+        
     }
-    
-    @Override
+        
     public void volume()
     {
         volume = (int) Math.pow(sisi, 3);
     }
-    
-    @Override    
+       
     public void luasPermukaan()
     {
         luasPermukaan = (int) Math.pow(sisi,2) * 6;
-    }    
+    }   
+    
+    @Override
+    public double getVolume()
+    {
+        return volume;
+    }
+    
+    @Override    
+    public double getLuasPermukaan()
+    {
+        return luasPermukaan;
+    } 
 }

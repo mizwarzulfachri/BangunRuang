@@ -34,8 +34,14 @@ public class Main implements ActionListener
     
     public void buatFrame()
     {
-        frame = new JFrame("BANGUN RUANG");
+        frame = new JFrame("Bangun Ruang");
         frame.setSize(500, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //Icon program dan warna program
+        ImageIcon image = new ImageIcon("icon.png");
+        frame.setIconImage(image.getImage());
+        frame.getContentPane().setBackground(new Color(0,0,0));
         
         JPanel panel = (JPanel)frame.getContentPane();
         panel.setLayout(new BorderLayout());
@@ -86,28 +92,10 @@ public class Main implements ActionListener
             //cipta objek class balok
         }
         else if(command.equals("LIMAS")){
-            frameLimas();
+            Limas lm = new Limas();
         }
         else if(command.equals("PRISMA")){
-            //cipta objek class prisma
-        }      
-    }
-    
-    public void frameLimas() {
-        frame = new JFrame("BANGUN RUANG");
-        frame.setSize(500, 500);
-        
-        JPanel panel = (JPanel)frame.getContentPane();
-        panel.setLayout(new BorderLayout());
-        
-        //Label untuk Panjang
-        JLabel label = new JLabel("Panjang");
-        label.setBounds(10, 20, 80, 25);
-        panel.add(textUser);
-            
-        //Input dari user
-        textUser = new JTextField(20);
-        textUser.setBounds(100, 20, 165, 25);
-        panel.add(textUser);    
+            Prisma pr = new Prisma();
+        }
     }
 }

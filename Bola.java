@@ -7,35 +7,42 @@
 public class Bola extends BangunRuang
 {
     // instance variables - replace the example below with your own
-    private double hasil;
-    private double r;
+    private double hasil, r, volume, luasPermukaan;
 
     /**
      * Constructor for objects of class Bola
      */
-    public Bola(double hasil)
+    public Bola()
     {
         // initialise instance variables
-        super();
-        this.hasil = hasil;
+        
     }
 
     /**
      * method yang mengubah volume sesuai dengan bangun ruang
      */
-    @Override
     public void volume()
     {
-        super.volume = 4/3 * 3.14 * Math.pow(r,3);
+        volume = 4/3 * 3.14 * Math.pow(r,3);
     }
     
     /**
      * 
      */
-    @Override
     public void luasPermukaan()
     {
-        super.luasPermukaan = 4 * 3.14 * Math.pow(r,2);
+        luasPermukaan = 4 * 3.14 * Math.pow(r,2);
     }
     
+    @Override
+    public double getVolume()
+    {
+        return volume;
+    }
+    
+    @Override
+    public double getLuasPermukaan()
+    {
+        return luasPermukaan;
+    }
 }

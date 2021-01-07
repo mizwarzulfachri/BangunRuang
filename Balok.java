@@ -7,25 +7,32 @@
  */
 public class Balok extends BangunRuang
 {
-    private int lebar, panjang, tinggi ;
+    private int lebar, panjang, tinggi, volume, luasPermukaan;
     
-    public Balok(int lebar, int panjang, int tinggi)
+    public Balok()
     {
-        super();
-        this.lebar = lebar;
-        this.panjang = panjang;
-        this.tinggi = tinggi;
+        
     }
     
-    @Override
     public void luasPermukaan() 
     {
         luasPermukaan = lebar * panjang;
     }
-    
-    @Override
+        
     public void volume()
     {
-        volume = getLuasPermukaan() * tinggi; 
+        volume = luasPermukaan * tinggi; 
+    }     
+    
+    @Override
+    public double getLuasPermukaan() 
+    {
+        return luasPermukaan;
+    }
+    
+    @Override
+    public double getVolume()
+    {
+        return volume; 
     }     
 }
