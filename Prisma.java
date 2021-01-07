@@ -7,7 +7,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 public class Prisma extends BangunRuang 
 {
     // instance variables - replace the example below with your own
@@ -32,6 +31,7 @@ public class Prisma extends BangunRuang
     private void makeFrame()
     {
         frame = new JFrame("Bangun Ruang Prisma(Segitiga sama sisi)");
+        frame.getContentPane().setBackground(new Color(78, 179, 255));
         frame.setSize(340,320);
         
         //Icon program dan warna program                
@@ -39,6 +39,7 @@ public class Prisma extends BangunRuang
         frame.setIconImage(image.getImage());
         
         JPanel panel = (JPanel)frame.getContentPane();
+        panel.setBorder(BorderFactory.createLineBorder(Color.blue, 5));
         panel.setLayout(null);
         JLabel labelKet = new JLabel("Variabel yang dibutuhkan :");
         JLabel labelPanjang = new JLabel("Panjang alas ");
@@ -55,7 +56,11 @@ public class Prisma extends BangunRuang
         tgiprsm = new JTextField(20);
         
         area = new JButton("Luas");
+        area.setBorder(BorderFactory.createEtchedBorder());
+        area.setBackground(new Color(221, 128, 255));
         vol = new JButton("Volume");
+        vol.setBorder(BorderFactory.createEtchedBorder());
+        vol.setBackground(new Color(221, 128, 255));
         back = new JButton("Back");
         
         hasilLuas = new JTextArea(" ");

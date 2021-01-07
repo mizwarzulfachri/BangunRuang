@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
+
 /**
  * Write a description of class Limas here.
  *
@@ -22,7 +22,7 @@ public class Limas extends BangunRuang {
     }
        
     public void makeFrame(){
-        frame = new JFrame("Bangun Ruang Limas"); //Nama program
+        frame = new JFrame("Bangun Ruang Limas(Segiempat sama sisi)"); //Nama program
         frame.setSize(350, 350); //Panjang, lebar program
         frame.setResizable(false); //Kunci panjang lebar program, AKA hiding any incompetence
         

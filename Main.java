@@ -12,10 +12,9 @@ public class Main implements ActionListener
 {
     // instance variables - replace the example below with your own
     private JFrame frame;
+    private JLabel keterangan;
     private JButton bolaButton, kubusButton, balokButton, limasButton, prismaButton;
-    private JLabel label;
-    private JPanel panel;
-    private JTextField textUser;
+    
     /**
      * Constructor for objects of class Main
      */
@@ -23,7 +22,7 @@ public class Main implements ActionListener
     {
         // initialise instance variables
         buatFrame();
-        setVisible(true);
+        frame.setVisible(true);
     }
 
     //menampilkan dan menutup frame
@@ -35,47 +34,58 @@ public class Main implements ActionListener
     public void buatFrame()
     {
         frame = new JFrame("Bangun Ruang");
-        frame.setSize(500, 500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setSize(380, 250);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
         
         //Icon program dan warna program
         ImageIcon image = new ImageIcon("icon.png");
         frame.setIconImage(image.getImage());
-        frame.getContentPane().setBackground(new Color(0,0,0));
+        frame.getContentPane().setBackground(new Color(175,158,220));
         
         JPanel panel = (JPanel)frame.getContentPane();
-        panel.setLayout(new BorderLayout());
+        panel.setBorder(BorderFactory.createLineBorder(Color.magenta, 5));//Border untuk program
+        panel.setLayout(null);
         
-        JPanel p = new JPanel();
+        keterangan = new JLabel("Pilih bentuk ruang yang ingin dicari:");
+        panel.add(keterangan);
+        keterangan.setBounds(86, 10, 500, 40);
+        
         
         bolaButton = new JButton("BOLA");
-        //register action listener
-        bolaButton.addActionListener(this);
-        p.add(bolaButton);
+        bolaButton.addActionListener(this); //register action listener        
+        panel.add(bolaButton);
+        bolaButton.setBorder(BorderFactory.createEtchedBorder());
+        bolaButton.setBackground(new Color(174, 178, 231));
+        bolaButton.setBounds(35, 45, 85, 35);
         
-        kubusButton = new JButton("KUBUS");
-        //register action listener
-        kubusButton.addActionListener(this);
-        p.add(kubusButton);
+        kubusButton = new JButton("KUBUS");        
+        kubusButton.addActionListener(this); //register action listener
+        panel.add(kubusButton);
+        kubusButton.setBorder(BorderFactory.createEtchedBorder());
+        kubusButton.setBackground(new Color(174, 178, 231));
+        kubusButton.setBounds(35, 125, 85, 35);
         
-        balokButton = new JButton("BALOK");
-        //register action listener
-        balokButton.addActionListener(this);
-        p.add(balokButton);
+        balokButton = new JButton("BALOK");        
+        balokButton.addActionListener(this); //register action listener
+        panel.add(balokButton);
+        balokButton.setBorder(BorderFactory.createEtchedBorder());
+        balokButton.setBackground(new Color(174, 178, 231));
+        balokButton.setBounds(235, 45, 85, 35);
         
-        limasButton = new JButton("LIMAS");
-        //register action listener
-        limasButton.addActionListener(this);
-        p.add(limasButton);
+        limasButton = new JButton("LIMAS");        
+        limasButton.addActionListener(this); //register action listener
+        panel.add(limasButton);
+        limasButton.setBorder(BorderFactory.createEtchedBorder());
+        limasButton.setBackground(new Color(174, 178, 231));
+        limasButton.setBounds(235, 125, 85, 35);
         
-        prismaButton = new JButton("PRISMA");
-        //register action listener
-        prismaButton.addActionListener(this);
-        p.add(prismaButton);
-        
-        panel.add(p, BorderLayout.NORTH);
-        
-        frame.pack();
+        prismaButton = new JButton("PRISMA");        
+        prismaButton.addActionListener(this); //register action listener
+        panel.add(prismaButton); 
+        prismaButton.setBorder(BorderFactory.createEtchedBorder());
+        prismaButton.setBackground(new Color(174, 178, 231));
+        prismaButton.setBounds(138, 86, 85, 35);
     }
     
     public void actionPerformed(ActionEvent event)
@@ -83,19 +93,19 @@ public class Main implements ActionListener
         String command = event.getActionCommand();
         
         if(command.equals("BOLA")){
-            Bola bl = new Bola();
+            new Bola();
         }
         else if(command.equals("KUBUS")){
-            //cipta objek class kubus
+            //new kubus();
         }
         else if(command.equals("BALOK")){
-            //cipta objek class balok
+            //new balok();
         }
         else if(command.equals("LIMAS")){
-            Limas lm = new Limas();
+            new Limas();
         }
         else if(command.equals("PRISMA")){
-            Prisma pr = new Prisma();
+            new Prisma();
         }
     }
 }

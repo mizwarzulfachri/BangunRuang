@@ -37,13 +37,16 @@ public class Bola extends BangunRuang
     private void makeFrame()
     {
         frame = new JFrame("Bangun Ruang BOLA");
+        frame.getContentPane().setBackground(new Color(78, 179, 255));
         frame.setSize(340,260);
+        frame.setResizable(false);
         
         //Icon program dan warna program                
         ImageIcon image = new ImageIcon("icon.png");
         frame.setIconImage(image.getImage());
 
         JPanel panel = (JPanel)frame.getContentPane();
+        panel.setBorder(BorderFactory.createLineBorder(Color.blue, 5));
         panel.setLayout(null);
         JLabel labelKet = new JLabel("Variabel yang dibutuhkan :");
         JLabel labelRad = new JLabel("jari jari ");
@@ -54,7 +57,11 @@ public class Bola extends BangunRuang
         radius = new JTextField(20);
 
         area = new JButton("Luas");
+        area.setBackground(new Color(221, 128, 255));
+        area.setBorder(BorderFactory.createEtchedBorder());
         vol = new JButton("Volume");
+        vol.setBorder(BorderFactory.createEtchedBorder());
+        vol.setBackground(new Color(221, 128, 255));
         back = new JButton("Back");
 
         hasilLP = new JTextArea(" ");
