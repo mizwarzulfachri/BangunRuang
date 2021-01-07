@@ -34,6 +34,10 @@ public class Prisma extends BangunRuang
         frame = new JFrame("Bangun Ruang Prisma(Segitiga sama sisi)");
         frame.setSize(340,320);
         
+        //Icon program dan warna program                
+        ImageIcon image = new ImageIcon("icon.png");
+        frame.setIconImage(image.getImage());
+        
         JPanel panel = (JPanel)frame.getContentPane();
         panel.setLayout(null);
         JLabel labelKet = new JLabel("Variabel yang dibutuhkan :");

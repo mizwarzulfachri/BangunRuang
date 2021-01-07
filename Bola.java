@@ -1,3 +1,4 @@
+
 /**
  * Write a description of class Bola here.
  *
@@ -11,7 +12,11 @@ import java.awt.event.*;
 public class Bola extends BangunRuang
 {
     // instance variables - replace the example below with your own
-    private double hasil, r, volume, luasPermukaan;
+    private double r, luasPermukaan, volume;
+    private JFrame frame;
+    private JTextArea hasilLP, hasilV; 
+    private JButton area, vol, back;
+    private JTextField radius;
 
     /**
      * Constructor for objects of class Bola
@@ -19,7 +24,9 @@ public class Bola extends BangunRuang
     public Bola()
     {
         // initialise instance variables
-        
+        makeFrame();
+        frame.setVisible(true);
+        aksiReaksi();
     }
     
     public void setVisible(boolean visible)
@@ -32,6 +39,10 @@ public class Bola extends BangunRuang
         frame = new JFrame("Bangun Ruang BOLA");
         frame.setSize(340,260);
         
+        //Icon program dan warna program                
+        ImageIcon image = new ImageIcon("icon.png");
+        frame.setIconImage(image.getImage());
+
         JPanel panel = (JPanel)frame.getContentPane();
         panel.setLayout(null);
         JLabel labelKet = new JLabel("Variabel yang dibutuhkan :");
@@ -39,17 +50,17 @@ public class Bola extends BangunRuang
         JLabel cm1 = new JLabel("cm");
         JLabel cm2 = new JLabel("cm^2");
         JLabel cm3 = new JLabel("cm^3");
-        
+
         radius = new JTextField(20);
-        
+
         area = new JButton("Luas");
         vol = new JButton("Volume");
         back = new JButton("Back");
-        
+
         hasilLP = new JTextArea(" ");
         hasilV = new JTextArea(" ");
-        
-        
+
+
         panel.add(labelKet);
         panel.add(labelRad);
         panel.add(radius);
@@ -61,7 +72,7 @@ public class Bola extends BangunRuang
         panel.add(back);
         panel.add(hasilLP);
         panel.add(hasilV);
-        
+
         labelKet.setBounds(20,10,200,20);
         labelRad.setBounds(20,40,200,20);
         radius.setBounds(150,40,120,20);
@@ -75,11 +86,13 @@ public class Bola extends BangunRuang
         hasilV.setBounds(185,120,50,30);
     }
     
+    @Override
     public double getVolume()
     {
         return this.volume;
     }
     
+    @Override
     public double getLuasPermukaan()
     { 
         return this.luasPermukaan;
@@ -90,7 +103,7 @@ public class Bola extends BangunRuang
      */
     public void volume()
     {
-        volume = 4/3 * 3.14 * Math.pow(r,3);
+        this.volume = 1.3333333333 * 3.14 * Math.pow(this.r,3);
     }
     
     /**
@@ -98,18 +111,44 @@ public class Bola extends BangunRuang
      */
     public void luasPermukaan()
     {
-        luasPermukaan = 4 * 3.14 * Math.pow(r,2);
+        this.luasPermukaan = 4 * 3.14 * Math.pow(this.r,2);
     }
     
-    @Override
-    public double getVolume()
+    public void aksiReaksi()
     {
-        return volume;
-    }
-    
-    @Override
-    public double getLuasPermukaan()
-    {
-        return luasPermukaan;
+        area.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent event)
+                {
+                    r = Double.parseDouble(radius.getText());
+                    luasPermukaan();
+                    hasilLP.setText(Double.toString(getLuasPermukaan()));
+                }
+            }
+        );
+
+        vol.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent event)
+                { 
+                    r = Double.parseDouble(radius.getText());
+                    volume();
+                    hasilV.setText(Double.toString(getVolume()));
+                }
+            }
+        );
+
+        back.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent event)
+                { 
+                    Toolkit.getDefaultToolkit().beep();
+                    frame.setVisible(false);
+                }
+            }
+        );
     }
 }

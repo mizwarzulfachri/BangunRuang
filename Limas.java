@@ -10,10 +10,10 @@ import java.io.*;
  */
 public class Limas extends BangunRuang {
     private JFrame frame;
-    private JTextField txtPanjang, txtLebar, txtTinggi;
+    private JTextField txtLebar, txtTinggi;
     private JButton LUAS, VOL, BACK;
     private JTextArea jawabanLuas, jawabanVol;
-    private double panjang, lebar, tinggi, luasPermukaan, volume;
+    private double lebar, tinggi, luasPermukaan, volume; //lebar sebagai alas    
 
     public Limas() {
         makeFrame();
@@ -37,25 +37,20 @@ public class Limas extends BangunRuang {
         
         //Label
         JLabel labelKeterangan = new JLabel("Data yang dibutuhkan :");
-        JLabel labelPanjang = new JLabel("Panjang");
-        JLabel labelLebar = new JLabel("Lebar");
+        JLabel labelLebar = new JLabel("Alas");
         JLabel labelTinggi = new JLabel("Tinggi");
         JLabel cm = metricSystem();
         JLabel cm2 = metricSystem2();
         JLabel cm3 = metricSystem3();
         JLabel cm4 = metricSystem();
-        JLabel cm5 = metricSystem();
              
         //Text box
-        txtPanjang = new JTextField(20);
         txtLebar = new JTextField(20);
         txtTinggi = new JTextField(20);
         
         panel.add(labelKeterangan);
-        panel.add(labelPanjang);
         panel.add(labelLebar);
         panel.add(labelTinggi);
-        panel.add(txtPanjang);
         panel.add(txtLebar);
         panel.add(txtTinggi);
         
@@ -86,19 +81,15 @@ public class Limas extends BangunRuang {
         panel.add(cm2);
         panel.add(cm3);
         panel.add(cm4);
-        panel.add(cm5);
         
         //Posisi
         labelKeterangan.setBounds(20, 15, 200, 20);//x, y, width, height
-        labelPanjang.setBounds(20, 45, 200, 20);//koordinat x, y, panjang, tinggi
-        labelLebar.setBounds(20, 75, 200, 20);
-        labelTinggi.setBounds(20, 105, 200, 20);
-        txtPanjang.setBounds(150, 45, 120, 20);
-        txtLebar.setBounds(150, 75, 120, 20);
-        txtTinggi.setBounds(150, 105, 120, 20);
+        labelLebar.setBounds(20, 45, 200, 20);//koordinat x, y, panjang, tinggi
+        labelTinggi.setBounds(20, 75, 200, 20);
+        txtLebar.setBounds(150, 45, 120, 20);
+        txtTinggi.setBounds(150, 75, 120, 20);
         cm.setBounds(280, 45, 100, 20);
         cm4.setBounds(280, 75, 100, 20);
-        cm5.setBounds(280, 105, 100, 20);
         cm2.setBounds(110, 180, 50, 20);
         cm3.setBounds(240, 180, 50, 20);
         LUAS.setBounds(40, 140, 110, 30); 
@@ -126,8 +117,7 @@ public class Limas extends BangunRuang {
     public void aksiReaksi(){
         LUAS.addActionListener(
             new ActionListener(){
-                public void actionPerformed(ActionEvent event){                    
-                    panjang = Double.parseDouble(txtPanjang.getText());
+                public void actionPerformed(ActionEvent event){
                     lebar = Double.parseDouble(txtLebar.getText());
                     tinggi = Double.parseDouble(txtTinggi.getText());
                     luasPermukaan();
@@ -139,7 +129,6 @@ public class Limas extends BangunRuang {
         VOL.addActionListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent event){
-                    panjang = Double.parseDouble(txtPanjang.getText());
                     lebar = Double.parseDouble(txtLebar.getText());
                     tinggi = Double.parseDouble(txtTinggi.getText());
                     volume();
@@ -163,20 +152,20 @@ public class Limas extends BangunRuang {
     }
     
     public void luasPermukaan(){
-        luasPermukaan = lebar * panjang;
+        luasPermukaan = lebar * tinggi * 0.5;
     }
         
-    public void volume(){        
-        volume = (1/3) * luasPermukaan * tinggi;    
+    public void volume(){ 
+        volume = 1.0/3.0 * (lebar * tinggi * 0.5) * tinggi;    
     }
     
     @Override
     public double getLuasPermukaan(){
-        return luasPermukaan;
+        return this.luasPermukaan;
     }
     
     @Override
     public double getVolume(){
-        return volume;
+        return this.volume;
     }
 }

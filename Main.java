@@ -83,7 +83,7 @@ public class Main implements ActionListener
         String command = event.getActionCommand();
         
         if(command.equals("BOLA")){
-            //cipta objek class bola
+            Bola bl = new Bola();
         }
         else if(command.equals("KUBUS")){
             //cipta objek class kubus
