@@ -59,10 +59,13 @@ public class Bola extends BangunRuang
         area = new JButton("Luas");
         area.setBackground(new Color(221, 128, 255));
         area.setBorder(BorderFactory.createEtchedBorder());
+        area.setFocusable(false);
         vol = new JButton("Volume");
         vol.setBorder(BorderFactory.createEtchedBorder());
         vol.setBackground(new Color(221, 128, 255));
+        vol.setFocusable(false);
         back = new JButton("Back");
+        back.setFocusable(false);
 
         hasilLP = new JTextArea(" ");
         hasilV = new JTextArea(" ");

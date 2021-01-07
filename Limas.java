@@ -90,8 +90,8 @@ public class Limas extends BangunRuang {
         txtTinggi.setBounds(150, 75, 120, 20);
         cm.setBounds(280, 45, 100, 20);
         cm4.setBounds(280, 75, 100, 20);
-        cm2.setBounds(110, 180, 50, 20);
-        cm3.setBounds(240, 180, 50, 20);
+        cm2.setBounds(120, 180, 50, 20);
+        cm3.setBounds(250, 180, 50, 20);
         LUAS.setBounds(40, 140, 110, 30); 
         VOL.setBounds(170, 140, 110, 30);
         BACK.setBounds(125, 240, 70, 20);
@@ -140,7 +140,7 @@ public class Limas extends BangunRuang {
         BACK.addActionListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent event){
-                    Toolkit.getDefaultToolkit().beep();
+                    Toolkit.getDefaultToolkit().beep(); //Suara yang menakutkan sekali
                     frame.setVisible(false);
                 }
             }

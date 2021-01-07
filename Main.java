@@ -58,6 +58,7 @@ public class Main implements ActionListener
         bolaButton.setBorder(BorderFactory.createEtchedBorder());
         bolaButton.setBackground(new Color(174, 178, 231));
         bolaButton.setBounds(35, 45, 85, 35);
+        bolaButton.setFocusable(false);
         
         kubusButton = new JButton("KUBUS");        
         kubusButton.addActionListener(this); //register action listener
@@ -65,6 +66,7 @@ public class Main implements ActionListener
         kubusButton.setBorder(BorderFactory.createEtchedBorder());
         kubusButton.setBackground(new Color(174, 178, 231));
         kubusButton.setBounds(35, 125, 85, 35);
+        kubusButton.setFocusable(false);
         
         balokButton = new JButton("BALOK");        
         balokButton.addActionListener(this); //register action listener
@@ -72,6 +74,7 @@ public class Main implements ActionListener
         balokButton.setBorder(BorderFactory.createEtchedBorder());
         balokButton.setBackground(new Color(174, 178, 231));
         balokButton.setBounds(235, 45, 85, 35);
+        balokButton.setFocusable(false);
         
         limasButton = new JButton("LIMAS");        
         limasButton.addActionListener(this); //register action listener
@@ -79,6 +82,7 @@ public class Main implements ActionListener
         limasButton.setBorder(BorderFactory.createEtchedBorder());
         limasButton.setBackground(new Color(174, 178, 231));
         limasButton.setBounds(235, 125, 85, 35);
+        limasButton.setFocusable(false);
         
         prismaButton = new JButton("PRISMA");        
         prismaButton.addActionListener(this); //register action listener
@@ -86,6 +90,7 @@ public class Main implements ActionListener
         prismaButton.setBorder(BorderFactory.createEtchedBorder());
         prismaButton.setBackground(new Color(174, 178, 231));
         prismaButton.setBounds(138, 86, 85, 35);
+        prismaButton.setFocusable(false);
     }
     
     public void actionPerformed(ActionEvent event)
@@ -96,10 +101,10 @@ public class Main implements ActionListener
             new Bola();
         }
         else if(command.equals("KUBUS")){
-            //new kubus();
+            new Kubus();
         }
         else if(command.equals("BALOK")){
-            //new balok();
+            new Balok();
         }
         else if(command.equals("LIMAS")){
             new Limas();

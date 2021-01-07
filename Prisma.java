@@ -58,10 +58,13 @@ public class Prisma extends BangunRuang
         area = new JButton("Luas");
         area.setBorder(BorderFactory.createEtchedBorder());
         area.setBackground(new Color(221, 128, 255));
+        area.setFocusable(false);
         vol = new JButton("Volume");
         vol.setBorder(BorderFactory.createEtchedBorder());
         vol.setBackground(new Color(221, 128, 255));
+        vol.setFocusable(false);
         back = new JButton("Back");
+        back.setFocusable(false);
         
         hasilLuas = new JTextArea(" ");
         hasilVol = new JTextArea(" ");
