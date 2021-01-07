@@ -6,7 +6,7 @@ import java.awt.event.*;
  * Write a description of class Kubus here.
  *
  * @author (Asdar Rasyid)
- * @version (a version number or a date)
+ * @version 7/01/20
  */
 public class Kubus extends BangunRuang
 {

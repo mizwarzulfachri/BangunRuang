@@ -2,7 +2,7 @@
  * Write a description of class Prisma here.
  *
  * @author (Anis Mahyatul Fauza)
- * @version (Project lab PBO)
+ * @version (Project lab PBO) - 7/01/20
  */
 import javax.swing.*;
 import java.awt.*;

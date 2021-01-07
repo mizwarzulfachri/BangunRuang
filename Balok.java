@@ -2,7 +2,7 @@
  * Write a description of class Balok here.
  *
  * @author Toyly Ashyyev
- * @version 
+ * @version 7/01/20 
  */
 import javax.swing.*;
 import java.awt.*;
@@ -40,9 +40,9 @@ public class Balok extends BangunRuang {
         panel.setBorder(BorderFactory.createLineBorder(Color.blue, 5));
         panel.setLayout(null);
         JLabel labelKet = new JLabel("Variabel yang dibutuhkan :");
-        JLabel labelPanjang = new JLabel("Panjang  ");
-        JLabel labelLebar = new JLabel("Tinggi ");
-        JLabel labelTinggi = new JLabel("Tinggi  ");
+        JLabel labelPanjang = new JLabel("Panjang");
+        JLabel labelLebar = new JLabel("Lebar");
+        JLabel labelTinggi = new JLabel("Tinggi");
         JLabel cm1 = new JLabel("cm");
         JLabel cm2 = new JLabel("cm");
         JLabel cm3 = new JLabel("cm");
@@ -104,12 +104,12 @@ public class Balok extends BangunRuang {
     
     public void luasPermukaan()
     {
-        luasPermukaan = ((2*((0.5)*this.panjang*this.tinggi))+(3*(this.tinggi*this.lembar)));
+        luasPermukaan = (2*(this.panjang*this.lembar+this.panjang*this.tinggi+this.lembar*this.tinggi));
     }
     
     public void volume()
     {
-        volume = (((0.5)*this.panjang*this.tinggi)*this.lembar);
+        volume = (this.panjang*this.lembar*this.tinggi);
     }
     
     @Override
@@ -159,6 +159,7 @@ public class Balok extends BangunRuang {
             {
                 public void actionPerformed(ActionEvent event)
                 { 
+                    Toolkit.getDefaultToolkit().beep();
                     frame.setVisible(false);
                 }
             }

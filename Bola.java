@@ -3,7 +3,7 @@
  * Write a description of class Bola here.
  *
  * @author Jessy Hanifiah
- * @version Projek Praktikum PBO
+ * @version Projek Praktikum PBO - 7/01/20
  */
 
 import javax.swing.*;

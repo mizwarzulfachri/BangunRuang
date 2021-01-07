@@ -2,7 +2,7 @@
  * Write a description of class BangunRuang here.
  *
  * @author Azzahra Geubrina
- * @version (a version number or a date)
+ * @version 7/01/20
  */
 public abstract class BangunRuang
 {

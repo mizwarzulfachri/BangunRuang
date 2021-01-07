@@ -2,7 +2,7 @@
  * Write a description of class Main here.
  *
  * @author Maghfirah Nursiam
- * @version (a version number or a date)
+ * @version 7/01/20
  */
 import javax.swing.*;
 import java.awt.*;
