@@ -31,7 +31,7 @@ public class Kubus extends BangunRuang
     
     private void makeFrame()
     {
-        frame = new JFrame("Bangun Ruang KUBUS");
+        frame = new JFrame("Bangun Ruang Kubus");
         frame.setResizable(false); //Kunci panjang lebar program
         frame.setSize(340,260);
         

@@ -36,7 +36,7 @@ public class Bola extends BangunRuang
     
     private void makeFrame()
     {
-        frame = new JFrame("Bangun Ruang BOLA");
+        frame = new JFrame("Bangun Ruang Bola");
         frame.getContentPane().setBackground(new Color(78, 179, 255));
         frame.setSize(340,260);
         frame.setResizable(false);

@@ -30,7 +30,7 @@ public class Prisma extends BangunRuang
     
     private void makeFrame()
     {
-        frame = new JFrame("Bangun Ruang Prisma(Segitiga sama sisi)");
+        frame = new JFrame("Bangun Ruang Prisma(Segitiga Sama Sisi)");
         frame.getContentPane().setBackground(new Color(78, 179, 255));
         frame.setSize(340,320);
         
