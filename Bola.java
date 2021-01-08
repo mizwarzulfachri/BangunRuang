@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Bola here.
  *
@@ -113,7 +112,7 @@ public class Bola extends BangunRuang
      */
     public void volume()
     {
-        this.volume = 1.3333333333 * 3.14 * Math.pow(this.r,3);
+        volume = 1.3333333333 * 3.14 * Math.pow(this.r,3);
     }
     
     /**
@@ -121,7 +120,7 @@ public class Bola extends BangunRuang
      */
     public void luasPermukaan()
     {
-        this.luasPermukaan = 4 * 3.14 * Math.pow(this.r,2);
+        luasPermukaan = 4 * 3.14 * Math.pow(this.r,2);
     }
     
     public void aksiReaksi()
